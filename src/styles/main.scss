@@ -1,0 +1,37 @@
+/* minimal layar ukuran besar */
+@media screen and (min-width: 768px) {
+    body {
+        header {
+            grid-template-columns: 2fr 2fr;
+            .menu-logo {
+                display: none;
+            }
+            nav {
+                text-align: center;
+                padding-top: 0.3rem;
+                li {
+                    display: inline-block;
+                    a {
+                        padding: 0.5rem;
+                        font-size: 22px;
+                        color: #f2d974;
+                        text-align: center;
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        .hero {
+            h2 {
+                padding-top: 6rem;
+            }
+        }
+        main {
+            .card-list {
+                grid-template-columns: repeat(3, 1fr);
+            } 
+        }
+    }
+}

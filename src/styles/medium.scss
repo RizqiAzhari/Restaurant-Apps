@@ -1,0 +1,20 @@
+/* minimal layar ukuran sedang */
+@media screen and (min-width: 480px) {
+    body {
+        //off-canvas menu opening
+        .open {
+            width: 50%;   
+        }
+        .hero {
+            h2 {
+                padding-top: 4rem;
+            }
+        }
+        main {
+            .card-list {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            } 
+        }
+    }
+}

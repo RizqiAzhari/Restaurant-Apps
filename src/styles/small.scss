@@ -1,0 +1,192 @@
+/* minimal layar ukuran kecil */
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Noto+Sans&display=swap');
+
+    *{
+        font-family: 'Noto Sans', sans-serif;
+        box-sizing: border-box;
+        list-style-type: none;
+        text-decoration: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    body {
+        background-color: #f2d974;
+        //off-canvas menu opening
+        .open {
+                z-index: 2;
+                background-color: #965d62;
+                width: 70%;
+                border-right: 5px solid #f2d974;
+                border-bottom: 5px solid #f2d974;
+                position: absolute;
+                top: 0;
+                left: 0;
+            ul {
+                li {
+                    width: 100%;
+                    text-align: left;
+                    padding: 1rem;
+                    border-bottom: 1px solid #f2d974;
+                    a {
+                        color: #f2d974;
+                        font-size: 35px;
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }    
+        }
+        //off-canvas menu closing
+        .hide {
+            display: none;
+        }
+        //skip to content
+        .skip-link {
+            width: 50%;
+            text-align: center;
+            position: absolute;
+            top: -150px;
+            left: 0;
+            background-color: #534e52;
+            color: #f2d974;
+            padding: 8px;
+            z-index: 3;
+            &:focus{
+                top: 0;
+            }
+         }
+        header {
+            background-color: #965d62;
+            color: #f2d974;
+            padding: 0.6rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            h1 {
+                font-family: 'Nerko One', cursive;
+                margin-left: 2rem;
+                font-size: 30px;
+            }
+            .menu-logo {
+                display: block;
+                height: 44px;
+                text-align: center;
+                padding-top: 0.5rem;
+                font-size: large;
+                color: #f2d974;
+                &:hover {
+                    font-size: 200%;
+                    padding-top: 0;
+                }
+            }
+            nav {
+                li {
+                    display: none;
+                }
+            }
+        }
+        
+        //main page
+        .hero {
+            height: 300px;
+            background-image: url("../public/images/heros/hero-image_2.jpg");
+            background-size: cover;
+            text-align: center;
+            h2 {
+                color: #534e52;
+                padding: 2rem;
+                font-size: 24px;
+                letter-spacing: 2px;
+                text-shadow: 2px 2px 5px #f2d974;
+            }
+            a {
+                padding: 1rem 1.5rem;
+                background-color: #534e52;
+                color: #f2d974;
+                font-size: 20px;
+                &:hover {
+                    background-color: #f2d974;
+                    color: #534e52;
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        main {
+            margin: 1rem;
+            h3 {
+                text-align: center;
+                color: #534e52;
+            }
+            //main content
+            .card-list {
+                display: block;
+                margin: 2rem auto;
+                .card-item {
+                    margin: 0 auto;
+                    width: 80%;
+                    height: 100%;
+                    background-color: #534e52;
+                    color: #f2d974;
+                    border: 10px solid #f2d974;
+                    border-radius: 40px;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                    h4 {
+                        padding: 0.5rem 2rem;
+                        margin: auto;
+                        font-weight: bold;
+                    }
+                }
+                .card-content {
+                    padding: 1rem;
+                    h5 {
+                        font-size: medium;
+                    }
+                    h6 {
+                        font-size: small;
+                    }
+                    p {
+                        margin-top: 0.5rem;
+                        font-size: small;
+                        //make a read less at this page
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        word-wrap: break-word;
+                        max-height: 4.5rem;
+                        line-height: 1.5rem;
+                    }
+                    a {
+                        padding-top: 0.5rem;
+                        color: #f2d974;
+                        &:hover {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            } 
+            //detail content
+            h2 {
+                text-align: center;
+                color: #534e52;
+            }
+            h3 {
+                color: #534e52;
+            }
+            h4 {
+                color: #534e52;
+            }
+        }
+    
+        footer {
+            padding: 0.5rem 2rem;
+            background-color: #965d62;
+            color: #f2d974;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
