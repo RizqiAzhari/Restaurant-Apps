@@ -24,12 +24,13 @@
             }
         }
         .hero {
+            background-image: image-set("../public/images/heros/hero-image_2.jpg" 3x);
             h2 {
                 padding-top: 6rem;
             }
         }
         main {
-            .card-list {
+            .cardList, .favorite-restaurant {
                 grid-template-columns: repeat(3, 1fr);
             } 
         }

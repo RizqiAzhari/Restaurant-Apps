@@ -3,11 +3,14 @@ import '../styles/small.scss'
 import '../styles/medium.scss'
 import '../styles/main.scss'
 import App from './views/app.js'
+import swRegister from './utils/sw-register'
+import 'lazysizes'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 
 const app = new App({
   menu: document.querySelector('.menu-logo'),
   hero: document.querySelector('.hero'),
-  main: document.querySelector('main'),
+  main: document.querySelector('#maincontent'),
   offcanvas: document.querySelector('#off-canvas')
 })
 
@@ -17,24 +20,12 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage()
+  swRegister()
+  
 })
 
-// let card_item = ''
-// data.restaurants.forEach(restaurant => {
-//   card_item += `
-//         <div class="card-item">
-//             <div class="card-photo">
-//                 <h4>${restaurant.city}</h4>
-//                 <img src="${restaurant.pictureId}" alt="${restaurant.name}">
-//             </div>
-//             <div class="card-content">
-//                 <h5>${restaurant.name}</h5>
-//                 <h6>Rating : ${restaurant.rating}</h6>
-//                 <p>${restaurant.description}</p>
-//                 <p>...  <a href=#>Read More</a></p>
-//             </div>
-//         </div>`
-// })
-// document.getElementById('card-list').innerHTML = card_item
+import('lodash.filter')
+.then((module) => module.default)
+.catch((error) => alert(error));
 
 export default app

@@ -1,17 +1,24 @@
-import RestaurantSources from '../../data/restaurant-sources.js'
+import FavoriteRestaurantIdb from '../../data/favoritrestaurant-idb.js'
+import { createListRestaurantTemplate } from '../templates/template-creator.js'
 
 const Favorit = {
   async render () {
+    const hero = document.querySelector('.hero')
+    hero.style.display = 'none'
     return `
-      <h2>Favorite Restaurant</h2>
+      <h2>Your Favorite Restaurant</h2>
+      <div id="favorite-restaurant" class="favorite-restaurant"></div>
     `
   },
 
   async afterRender () {
-    const favorites = await RestaurantSources.favoritRestaurant()
-    console.log(favorites)
+    const favoritesRestaurant = await FavoriteRestaurantIdb.getAllRestaurants()
+    const favoriteListContainer = document.querySelector('#favorite-restaurant')
 
-    // TODO: tampilkan movies di dalam DOM
+    // TODO: tampilkan restaurants di dalam DOM
+    favoritesRestaurant.forEach((restaurant) => {
+      favoriteListContainer.innerHTML += createListRestaurantTemplate(restaurant)
+    })
   }
 }
 

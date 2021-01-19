@@ -3,17 +3,20 @@ import { createListRestaurantTemplate } from '../templates/template-creator.js'
 
 const Home = {
   async render () {
+    const hero = document.querySelector('.hero')
+    hero.style.display = 'block'
     return `
-      <h3>Explore Restaurant</h3>
+      <h2>Explore Restaurant</h2>
+      <div class="cardList" id="cardList"></div>
     `
   },
 
   async afterRender () {
-    const listRestaurant = await RestaurantSources.homeRestaurant()
-    const listCards = document.getElementById('card-list')
+    const listRestaurants = await RestaurantSources.homeRestaurant()
+    const listCards = document.querySelector('#cardList')
 
     // TODO: tampilkan restaurant di dalam DOM
-    listRestaurant.restaurants.forEach((restaurant) => {
+    listRestaurants.restaurants.forEach((restaurant) => {
       listCards.innerHTML += createListRestaurantTemplate(restaurant)
     })
   }

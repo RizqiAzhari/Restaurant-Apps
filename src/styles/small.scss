@@ -92,6 +92,7 @@
         .hero {
             height: 300px;
             background-image: url("../public/images/heros/hero-image_2.jpg");
+            background-image: image-set("../public/images/heros/hero-image_2.jpg" 1x);
             background-size: cover;
             text-align: center;
             h2 {
@@ -120,8 +121,8 @@
                 text-align: center;
                 color: #534e52;
             }
-            //main content
-            .card-list {
+            // .cardList untuk display list restaurant, .favorite-restaurant untuk display list restaurant favorit
+            .cardList, .favorite-restaurant {
                 display: block;
                 margin: 2rem auto;
                 .card-item {
@@ -134,37 +135,45 @@
                     border-radius: 40px;
                     img {
                         width: 100%;
+                        height: 270px;
                         object-fit: cover;
+                        object-position: center;
                     }
                     h4 {
+                        color: #f2d974;
                         padding: 0.5rem 2rem;
                         margin: auto;
                         font-weight: bold;
                     }
-                }
-                .card-content {
-                    padding: 1rem;
-                    h5 {
-                        font-size: medium;
-                    }
-                    h6 {
-                        font-size: small;
-                    }
-                    p {
-                        margin-top: 0.5rem;
-                        font-size: small;
-                        //make a read less at this page
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        word-wrap: break-word;
-                        max-height: 4.5rem;
-                        line-height: 1.5rem;
-                    }
-                    a {
-                        padding-top: 0.5rem;
-                        color: #f2d974;
-                        &:hover {
-                            font-weight: bold;
+                    .card-content {
+                        padding: 1rem;
+                        .restaurant-name {
+                            font-size: medium;
+                        }
+                        h6 {
+                            font-size: small;
+                        }
+                        p {
+                            margin-top: 0.5rem;
+                            font-size: small;
+                            //make a read less at this page
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            word-wrap: break-word;
+                            max-height: 4.5rem;
+                            line-height: 1.5rem;
+                        }
+                        .read-more {
+                            padding-top: 0.5rem;
+                            text-align: center;
+                            a {
+                                padding: 0.5rem;
+                                color: #f2d974;
+                                font-size: 21px;
+                                &:hover {
+                                    font-weight: bold;
+                                }
+                            }
                         }
                     }
                 }
@@ -179,6 +188,30 @@
             }
             h4 {
                 color: #534e52;
+            }
+            .photo_detail {
+                width: 80%;
+                margin: 2rem 4rem;
+            }
+            .menu-sub {
+                font-weight: bold;
+            }
+            //like button
+            .like {
+                font-size: 18px;
+                position: fixed;
+                bottom: 16px;
+                right: 16px;
+                background-color: #534e52;
+                color: #f2d974;
+                border: 0;
+                border-radius: 50%;
+                width: 55px;
+                height: 55px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     

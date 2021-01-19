@@ -6,12 +6,13 @@
             width: 50%;   
         }
         .hero {
+            background-image: image-set("../public/images/heros/hero-image_2.jpg" 2x);
             h2 {
                 padding-top: 4rem;
             }
         }
         main {
-            .card-list {
+            .cardList , .favorite-restaurant{
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
             } 
